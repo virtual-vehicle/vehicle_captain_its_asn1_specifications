@@ -1,0 +1,109 @@
+VC-Container {
+itu-t (0) identified-organization (4) etsi (0) itsDomain (5) additions (999) vehiclecaptain(0) vccontainer(0) version(1)
+}
+
+DEFINITIONS AUTOMATIC TAGS ::=
+
+BEGIN
+
+RawRxMessage ::= SEQUENCE {
+    localInfo LocalInfo OPTIONAL,
+    rxInfo RxInfo,
+    payloadSize INTEGER (0..1500),          -- MTU = 1500u
+    payloadString OCTET STRING (SIZE(1..1500)) OPTIONAL -- payload of an V2X asn1 encoded stream
+}
+
+RawTxMessage ::= SEQUENCE {
+    txInfo TxInfo
+}
+
+LocalInfo ::= SEQUENCE {
+    timestamp TimeVal,                      -- The time upon composing the receiving packet
+    positionInfo PositionInfo               -- Position upon composing the receiving packet
+}
+
+RxInfo ::= SEQUENCE {
+    timestamp TimeVal,                      -- The received time of the packet from lower layer
+    rssi INTEGER (-32768..32767),           -- The receving RSSI of the packet
+    dataRate INTEGER (0..65535),            -- 500kbit per sec
+    trafficClassID INTEGER (0..255),        -- this field indicates traffic class ID
+    remainHopLimit INTEGER (0..255),        -- this field indicates remaining hop limit
+    security RxSecurity,                    -- this field indicates security info
+    positionInfo PositionInfo,              -- this field indicates position info
+    areaTypeInfo AreaTypeInfo,              -- this field indicates area type info
+    sourceMacAddress MACAddress             -- this field indicates source MAC address
+}
+
+TxInfo ::= SEQUENCE {
+    destPort INTEGER (0..65535),            -- this field is used if destPortPresent is true
+    dataRate INTEGER (0..255),              -- this field is used if dataRatePresent is true
+    txPower INTEGER (-128..127),            -- this field is used if txPowerPresent is true
+    trafficClassID INTEGER (0..255),        -- this field is used if trafficClassIDPresent is true
+    security TxSecurity,                    -- this field is used if securityPresent is true
+    positionInfo PositionInfo,              -- this field is used if positionInfoPresent is true
+    areaTypeInfo AreaTypeInfo,              -- this field is used if areaTypeInfoPresent is true
+    destPortPresent BOOLEAN,                -- this field indicates if destination port is present or not
+    dataRatePresent BOOLEAN,                -- this field indicates if data rate is present or not
+    txPowerPresent BOOLEAN,                 -- this field indicates if TX power is present or not
+    trafficClassIDPresent BOOLEAN,          -- this field indicates if traffic class ID is present or not
+    securityPresent BOOLEAN,                -- this field indicates if security is present or not
+    positionInfoPresent BOOLEAN,            -- this field indicates if position info is present or not
+    areaTypeInfoPresent BOOLEAN             -- this field indicates if area type info is present or not
+}
+
+TimeVal ::= SEQUENCE {
+    sec INTEGER (-2147483648..2147483647),  -- Unix timestamp, seconds since EPOCH
+    usec INTEGER (-2147483648..2147483647)  -- Unix timestamp, usec offset
+}
+
+ItsAID ::= INTEGER (0..2113663)             -- ITS Application Object Identifier (AID) -> fix !Not standard compliant!: https://forge.etsi.org/rep/ITS/ITS_ASN1/blob/master/SAEM_EN302890/ISO_TS_17419_Reduced.asn
+SSPLen ::= INTEGER (0..255)                 -- Number of Service Specific Permission (SSP)
+SSP ::= OCTET STRING (SIZE(32))             -- Service Specific Permission (SSP)
+
+RxSecurity ::= SEQUENCE {
+    status DecapStatus,                     -- Decapsulation result
+    itsAID ItsAID,                          -- ITS Application Object Identifier (AID)
+    sspLen SSPLen,                          -- Number of Service Specific Permission (SSP)
+    ssp SSP                                 -- Service Specific Permission (SSP)
+}
+
+TxSecurity ::= SEQUENCE {
+    type EncapType,                         -- Encapsulation type
+    itsAID ItsAID,                          -- ITS Application Object Identifier (AID)
+    sspLen SSPLen,                          -- Number of Service Specific Permission (SSP)
+    ssp SSP                                 -- Service Specific Permission (SSP)
+}
+
+EncapType ::= ENUMERATED {
+    unsecure (0),                           -- Unsecure encapsulation type
+    signed (1)                              -- Signed encapsulation type
+}
+
+DecapStatus ::= ENUMERATED {
+    none (0),                               -- Non-execution security decapulation
+    invalid-fmt (1),                        -- Invalid EtsiTs103097 format
+    verified-pkt (2),                       -- Valid EtsiTs103097 SignedData (verification success)
+    unverifiable-pkt (3)                    -- Valid EtsiTs103097 UnsecuredData (unable to verify) OR SignedData (verification failure)
+}
+
+PositionInfo ::= SEQUENCE {
+    latitude INTEGER (-2147483648..2147483647),     -- WGS84, 1/10 micros degrees.
+    longitude INTEGER (-2147483648..2147483647)     -- WGS84, 1/10 micros degrees.
+}
+
+AreaTypeInfo ::= SEQUENCE {
+    type AreaType,                          -- GN_AREA_TYPE_CIRCLE, GN_AREA_TYPE_RECT, GN_AREA_TYPE_ELIP.
+    distanceA INTEGER (0..65535),           -- Distance a of the geometric shape, meters.
+    distanceB INTEGER (0..65535),           -- Distance b of the geometric shape, meters.
+    angle INTEGER (0..65535)                -- Angle of the geometric shape, degrees from North.
+}
+
+AreaType ::= ENUMERATED {
+    circle (0),                             -- Circle area type
+    rectangle (1),                          -- Rectangular area type
+    ellipse (2)                             -- Ellipse area type
+}
+
+MACAddress ::= OCTET STRING(SIZE(6))
+
+END

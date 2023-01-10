@@ -1,0 +1,90 @@
+[submodule "mbmr_ts103759"]
+	path = etsi/mbmr_ts103759
+	url = https://forge.etsi.org/rep/ITS/asn1/mbmr_ts103759.git
+[submodule "imzm_ts103724"]
+	path = etsi/imzm_ts103724
+	url = https://forge.etsi.org/rep/ITS/asn1/imzm_ts103724.git
+[submodule "vam-ts103300_3"]
+	path = etsi/vam-ts103300_3
+	url = https://forge.etsi.org/rep/ITS/asn1/vam-ts103300_3.git
+[submodule "evrsr_ts101556_3"]
+	path = etsi/evrsr_ts101556_3
+	url = https://forge.etsi.org/rep/ITS/asn1/evrsr_ts101556_3.git
+[submodule "tistpg_ts101556_2"]
+	path = etsi/tistpg_ts101556_2
+	url = https://forge.etsi.org/rep/ITS/asn1/tistpg_ts101556_2.git
+[submodule "evcsn-ts101556_1"]
+	path = etsi/evcsn-ts101556_1
+	url = https://forge.etsi.org/rep/ITS/asn1/evcsn-ts101556_1.git
+[submodule "poti_en302890_2"]
+	path = etsi/poti_en302890_2
+	url = https://forge.etsi.org/rep/ITS/asn1/poti_en302890_2.git
+[submodule "saem_en302890_1"]
+	path = etsi/saem_en302890_1
+	url = https://forge.etsi.org/rep/ITS/asn1/saem_en302890_1.git
+[submodule "pki_ts102941"]
+	path = etsi/pki_ts102941
+	url = https://forge.etsi.org/rep/ITS/asn1/pki_ts102941.git
+[submodule "denm_en302637_3"]
+	path = etsi/denm_en302637_3
+	url = https://forge.etsi.org/rep/ITS/asn1/denm_en302637_3.git
+[submodule "cam_en302637_2"]
+	path = etsi/cam_en302637_2
+	url = https://forge.etsi.org/rep/ITS/asn1/cam_en302637_2.git
+[submodule "ieee1609.2"]
+	path = etsi/ieee1609.2
+	url = https://forge.etsi.org/rep/ITS/asn1/ieee1609.2.git
+[submodule "cdd_ts102894_2"]
+	path = etsi/cdd_ts102894_2
+	url = https://forge.etsi.org/rep/ITS/asn1/cdd_ts102894_2.git
+[submodule "is_ts103301"]
+	path = etsi/is_ts103301
+	url = https://forge.etsi.org/rep/ITS/asn1/is_ts103301.git
+[submodule "sec_ts103097"]
+	path = etsi/sec_ts103097
+	url = https://forge.etsi.org/rep/ITS/asn1/sec_ts103097.git
+[submodule "etsi/mbmr_ts103759"]
+	path = etsi/mbmr_ts103759
+	url = https://forge.etsi.org/rep/ITS/asn1/mbmr_ts103759.git
+[submodule "etsi/imzm_ts103724"]
+	path = etsi/imzm_ts103724
+	url = https://forge.etsi.org/rep/ITS/asn1/imzm_ts103724.git
+[submodule "etsi/vam-ts103300_3"]
+	path = etsi/vam-ts103300_3
+	url = https://forge.etsi.org/rep/ITS/asn1/vam-ts103300_3.git
+[submodule "etsi/evrsr_ts101556_3"]
+	path = etsi/evrsr_ts101556_3
+	url = https://forge.etsi.org/rep/ITS/asn1/evrsr_ts101556_3.git
+[submodule "etsi/tistpg_ts101556_2"]
+	path = etsi/tistpg_ts101556_2
+	url = https://forge.etsi.org/rep/ITS/asn1/tistpg_ts101556_2.git
+[submodule "etsi/evcsn-ts101556_1"]
+	path = etsi/evcsn-ts101556_1
+	url = https://forge.etsi.org/rep/ITS/asn1/evcsn-ts101556_1.git
+[submodule "etsi/poti_en302890_2"]
+	path = etsi/poti_en302890_2
+	url = https://forge.etsi.org/rep/ITS/asn1/poti_en302890_2.git
+[submodule "etsi/saem_en302890_1"]
+	path = etsi/saem_en302890_1
+	url = https://forge.etsi.org/rep/ITS/asn1/saem_en302890_1.git
+[submodule "etsi/pki_ts102941"]
+	path = etsi/pki_ts102941
+	url = https://forge.etsi.org/rep/ITS/asn1/pki_ts102941.git
+[submodule "etsi/denm_en302637_3"]
+	path = etsi/denm_en302637_3
+	url = https://forge.etsi.org/rep/ITS/asn1/denm_en302637_3.git
+[submodule "etsi/cam_en302637_2"]
+	path = etsi/cam_en302637_2
+	url = https://forge.etsi.org/rep/ITS/asn1/cam_en302637_2.git
+[submodule "etsi/ieee1609.2"]
+	path = etsi/ieee1609.2
+	url = https://forge.etsi.org/rep/ITS/asn1/ieee1609.2.git
+[submodule "etsi/cdd_ts102894_2"]
+	path = etsi/cdd_ts102894_2
+	url = https://forge.etsi.org/rep/ITS/asn1/cdd_ts102894_2.git
+[submodule "etsi/is_ts103301"]
+	path = etsi/is_ts103301
+	url = https://forge.etsi.org/rep/ITS/asn1/is_ts103301.git
+[submodule "etsi/sec_ts103097"]
+	path = etsi/sec_ts103097
+	url = https://forge.etsi.org/rep/ITS/asn1/sec_ts103097.git
