@@ -1323,11 +1323,12 @@ PriorityRequestType ::= ENUMERATED {
   ...  
 }
 
-RegionId ::= INTEGER (0..255)
-  noRegion     RegionId ::= 0
-  addGrpA      RegionId ::= 1
-  addGrpB      RegionId ::= 2
-  addGrpC      RegionId ::= 3
+RegionId ::= INTEGER {
+  noRegion      (0)
+  addGrpA       (1)
+  addGrpB       (2)
+  addGrpC       (3)
+} (0..255, ...)
 
 RequestID ::= INTEGER (0..255)
 
