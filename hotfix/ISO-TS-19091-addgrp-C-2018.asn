@@ -1324,9 +1324,9 @@ PriorityRequestType ::= ENUMERATED {
 }
 
 RegionId ::= INTEGER {
-  noRegion      (0)
-  addGrpA       (1)
-  addGrpB       (2)
+  noRegion      (0),
+  addGrpA       (1),
+  addGrpB       (2),
   addGrpC       (3)
 } (0..255, ...)
 
