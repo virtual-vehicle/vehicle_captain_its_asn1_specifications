@@ -88,3 +88,6 @@
 [submodule "etsi/sec_ts103097"]
 	path = etsi/sec_ts103097
 	url = https://forge.etsi.org/rep/ITS/asn1/sec_ts103097.git
+[submodule "etsi/cpm_ts103324"]
+	path = etsi/cpm_ts103324
+	url = https://forge.etsi.org/rep/ITS/asn1/cpm_ts103324.git
